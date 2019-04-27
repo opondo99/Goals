@@ -24,19 +24,19 @@ export class GoalComponent implements OnInit {
 
     deleteGoal(isComplete, index) {
       if (isComplete) {
-        let toDelete = confirm('Are you sure you want to delete $(this.goals[index].name)');
+        const toDelete = confirm('Are you sure you want to delete $(this.goals[index].name)');
 
         if (toDelete) {
-          this.goals.splice(index, 1)
+          this.goals.splice(index, 1);
         }
       }
     }
 
-    addNewGoal(goal){
-      let goalLength =this.goals.length;
-      goal.id = goalLength+ 1;
+    addNewGoal(goal) {
+      const goalLength = this.goals.length;
+      goal.id = goalLength + 1;
       goal.completeDate = new Date(goal.completeDate);
-      this.goals.push(goal)
+      this.goals.push(goal);
     }
 
   constructor() { }
